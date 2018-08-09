@@ -41,6 +41,8 @@
 		5E249A22211BE4230077E3D8 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A00211BE4220077E3D8 /* ConstraintLayoutGuide+Extensions.swift */; };
 		5E249A23211BE4230077E3D8 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A01211BE4220077E3D8 /* ConstraintLayoutSupportDSL.swift */; };
 		5E249A24211BE4230077E3D8 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A02211BE4220077E3D8 /* ConstraintMakerRelatable.swift */; };
+		5E249A26211C1F440077E3D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A25211C1F440077E3D8 /* Constants.swift */; };
+		5E249A29211C2C5A0077E3D8 /* ScrollSelectPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A28211C2C5A0077E3D8 /* ScrollSelectPopView.swift */; };
 		5EDC172620DA47AA00FD0351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC172520DA47AA00FD0351 /* AppDelegate.swift */; };
 		5EDC172820DA47AB00FD0351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC172720DA47AB00FD0351 /* ViewController.swift */; };
 		5EDC172B20DA47AB00FD0351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDC172920DA47AB00FD0351 /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 		5E249A00211BE4220077E3D8 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		5E249A01211BE4220077E3D8 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		5E249A02211BE4220077E3D8 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		5E249A25211C1F440077E3D8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E249A28211C2C5A0077E3D8 /* ScrollSelectPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSelectPopView.swift; sourceTree = "<group>"; };
 		5EDC172220DA47A900FD0351 /* ZzzPopView_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZzzPopView_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDC172520DA47AA00FD0351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDC172720DA47AB00FD0351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,14 @@
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
+		5E249A27211C2B930077E3D8 /* ZzzStripScrollSelectPopView */ = {
+			isa = PBXGroup;
+			children = (
+				5E249A28211C2C5A0077E3D8 /* ScrollSelectPopView.swift */,
+			);
+			path = ZzzStripScrollSelectPopView;
+			sourceTree = "<group>";
+		};
 		5EDC171920DA47A800FD0351 = {
 			isa = PBXGroup;
 			children = (
@@ -165,9 +177,11 @@
 		5EDC172420DA47A900FD0351 /* ZzzPopView_swift */ = {
 			isa = PBXGroup;
 			children = (
+				5E249A27211C2B930077E3D8 /* ZzzStripScrollSelectPopView */,
 				5E2499DF211BE4220077E3D8 /* SnapKit */,
 				5EDC172520DA47AA00FD0351 /* AppDelegate.swift */,
 				5EDC172720DA47AB00FD0351 /* ViewController.swift */,
+				5E249A25211C1F440077E3D8 /* Constants.swift */,
 				5EDC172920DA47AB00FD0351 /* Main.storyboard */,
 				5EDC172C20DA47E100FD0351 /* Assets.xcassets */,
 				5EDC172E20DA47E100FD0351 /* LaunchScreen.storyboard */,
@@ -280,8 +294,10 @@
 				5E249A05211BE4230077E3D8 /* ConstraintDescription.swift in Sources */,
 				5E249A1A211BE4230077E3D8 /* ConstraintRelation.swift in Sources */,
 				5E249A1C211BE4230077E3D8 /* ConstraintView+Extensions.swift in Sources */,
+				5E249A29211C2C5A0077E3D8 /* ScrollSelectPopView.swift in Sources */,
 				5E249A0D211BE4230077E3D8 /* ConstraintMakerExtendable.swift in Sources */,
 				5E249A1B211BE4230077E3D8 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				5E249A26211C1F440077E3D8 /* Constants.swift in Sources */,
 				5E249A1D211BE4230077E3D8 /* ConstraintItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
