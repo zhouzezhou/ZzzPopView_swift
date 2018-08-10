@@ -11,8 +11,26 @@ import UIKit
 
 class ScrollSelectPopView:UIView {
 
-
-
-
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.frame = UIScreen.main.bounds
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func initWithScrollSelectDataFun(data:DataScrollSelect)
+    {
+        
+        self.backgroundColor = .red
+        
+//        return self
+    }
+    
+    public func showInView(parentView:UIView)
+    {
+        parentView.addSubview(self)
+    }
 }
 

@@ -43,6 +43,7 @@
 		5E249A24211BE4230077E3D8 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A02211BE4220077E3D8 /* ConstraintMakerRelatable.swift */; };
 		5E249A26211C1F440077E3D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A25211C1F440077E3D8 /* Constants.swift */; };
 		5E249A29211C2C5A0077E3D8 /* ScrollSelectPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A28211C2C5A0077E3D8 /* ScrollSelectPopView.swift */; };
+		5E249A2B211D6C0D0077E3D8 /* DataScrollSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249A2A211D6C0D0077E3D8 /* DataScrollSelect.swift */; };
 		5EDC172620DA47AA00FD0351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC172520DA47AA00FD0351 /* AppDelegate.swift */; };
 		5EDC172820DA47AB00FD0351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC172720DA47AB00FD0351 /* ViewController.swift */; };
 		5EDC172B20DA47AB00FD0351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDC172920DA47AB00FD0351 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		5E249A02211BE4220077E3D8 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		5E249A25211C1F440077E3D8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E249A28211C2C5A0077E3D8 /* ScrollSelectPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSelectPopView.swift; sourceTree = "<group>"; };
+		5E249A2A211D6C0D0077E3D8 /* DataScrollSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScrollSelect.swift; sourceTree = "<group>"; };
 		5EDC172220DA47A900FD0351 /* ZzzPopView_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZzzPopView_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDC172520DA47AA00FD0351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDC172720DA47AB00FD0351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5E249A28211C2C5A0077E3D8 /* ScrollSelectPopView.swift */,
+				5E249A2A211D6C0D0077E3D8 /* DataScrollSelect.swift */,
 			);
 			path = ZzzStripScrollSelectPopView;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				5E249A10211BE4230077E3D8 /* ConstraintConfig.swift in Sources */,
 				5E249A21211BE4230077E3D8 /* LayoutConstraint.swift in Sources */,
 				5E249A19211BE4230077E3D8 /* ConstraintMaker.swift in Sources */,
+				5E249A2B211D6C0D0077E3D8 /* DataScrollSelect.swift in Sources */,
 				5E249A1F211BE4230077E3D8 /* Debugging.swift in Sources */,
 				5E249A0A211BE4230077E3D8 /* ConstraintInsets.swift in Sources */,
 				5E249A05211BE4230077E3D8 /* ConstraintDescription.swift in Sources */,
