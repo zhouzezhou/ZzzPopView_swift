@@ -146,9 +146,9 @@ class ViewController: UIViewController {
         dataArr.selectedIndex = 0
         
         
-        let regularSelectpopView = ScrollSelectPopView(frame: self.view.bounds)
-        regularSelectpopView.initWithScrollSelectData(data: dataArr)
-        regularSelectpopView.showInView(parentView: self.view)
+//        let regularSelectpopView = ScrollSelectPopView(frame: self.view.bounds)
+//        regularSelectpopView.initWithScrollSelectData(data: dataArr)
+//        regularSelectpopView.showInView(parentView: self.view)
         
     }
     

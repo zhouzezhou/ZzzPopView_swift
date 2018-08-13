@@ -11,6 +11,13 @@ import UIKit
 
 class ScrollSelectPopView:UIView {
 
+    let PADDING_backgroudView:CGFloat = 20.0     // 背景层的右、下边距
+    
+    var dataScrollSelect:DataScrollSelect?
+    var backgroudViewWidth:CGFloat?
+    var backgroudViewHeight:CGFloat?
+    var pickviewWidth:CGFloat?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.frame = UIScreen.main.bounds
@@ -22,8 +29,19 @@ class ScrollSelectPopView:UIView {
     
     func initWithScrollSelectDataFun(data:DataScrollSelect)
     {
+        dataScrollSelect = data
         
-        self.backgroundColor = .red
+        self.backgroundColor = .black
+        self.alpha = 0.6
+        
+        // 大小常量
+        let btnFontSize = 15                 // 按钮字体大小
+        let paddingLeft = 10.0               // 左边距
+        let selectedImgWidth = 20.0          // 选中图片宽度
+        self.backgroudViewWidth = kScreenWidth * 0.5  // 白色背景层宽度
+        self.backgroudViewHeight = kScreenHeight - kStatusBarHeight - self.PADDING_backgroudView      // 白色背景层高度
+        self.pickviewWidth = backgroudViewWidth
+        
         
 //        return self
     }
