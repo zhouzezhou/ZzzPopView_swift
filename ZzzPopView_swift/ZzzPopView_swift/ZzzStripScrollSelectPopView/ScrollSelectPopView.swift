@@ -42,6 +42,14 @@ class ScrollSelectPopView:UIView {
         self.backgroudViewHeight = kScreenHeight - kStatusBarHeight - self.PADDING_backgroudView      // 白色背景层高度
         self.pickviewWidth = backgroudViewWidth
         
+        var backgroudView = UIView.init(frame: CGRect.init(x: self.backgroudViewWidth! - self.PADDING_backgroudView, y: kStatusBarHeight, width: self.backgroudViewWidth, height: self.backgroudViewHeight))
+        
+        
+        
+        
+        
+        
+        
         
 //        return self
     }
