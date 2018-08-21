@@ -9,7 +9,8 @@
 import UIKit
 
 
-class ScrollSelectPopView:UIView {
+class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
+
 
     let PADDING_backgroudView:CGFloat = 20.0     // 背景层的右、下边距
     
@@ -61,7 +62,13 @@ class ScrollSelectPopView:UIView {
         self.addSubview(contentBackgroudView)
         
         
-        
+        let heightContentPickerView = 2 * self.height_backgroudView!
+        var contentPickView = UIPickerView.init(frame: CGRect.init(x: 0,
+                                                                   y: -(heightContentPickerView / 4),
+                                                                   width: self.width_backgroudView!,
+                                                                   height: heightContentPickerView))
+        contentPickView.delegate = self
+        contentPickView.dataSource = self
         
         
         
@@ -78,6 +85,46 @@ class ScrollSelectPopView:UIView {
     @objc func alphaBackGroudViewTouchUpInside(_ tapGes : UITapGestureRecognizer)
     {
         print(#function)
+    }
+    
+    //MARK: - UIPickerViewDelegate
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        print("count is :\((self.dataScrollSelect?.dataArr.count)!)")
+        return (self.dataScrollSelect?.dataArr.count)!
+    }
+    
+    
+    
+    //MARK: - UIPickerViewDataSource
+
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return self.height_backgroudView! / 15
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return self.width_backgroudView!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let tempLabel = UILabel.init(frame: view!.bounds)
+        tempLabel.text = "Temp"
+        view?.addSubview(tempLabel)
+        
+        return view!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(#function)
+        
+        
+        
     }
 }
 
