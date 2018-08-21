@@ -14,9 +14,10 @@ class ScrollSelectPopView:UIView {
     let PADDING_backgroudView:CGFloat = 20.0     // 背景层的右、下边距
     
     var dataScrollSelect:DataScrollSelect?
-    var backgroudViewWidth:CGFloat?
-    var backgroudViewHeight:CGFloat?
-    var pickviewWidth:CGFloat?
+    
+    var width_backgroudView:CGFloat?
+    var height_backgroudView:CGFloat?
+    var width_pickview:CGFloat?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,18 +32,33 @@ class ScrollSelectPopView:UIView {
     {
         dataScrollSelect = data
         
-        self.backgroundColor = .black
-        self.alpha = 0.6
+        // 半透明的背景图层
+        let alphaBackGroudView = UIView.init(frame: self.layer.bounds)
+        alphaBackGroudView.backgroundColor = .black
+        alphaBackGroudView.alpha = 0.6
+        self.addSubview(alphaBackGroudView)
+        
+//        alphaBackGroudView.isUserInteractionEnabled = true
+//        let alphaBackGroudViewTapGestureRecognizer = UIGestureRecognizer.init(target: self, action: #selector(self.alphaBackGroudViewTouchUpInside(_:)))
+//        alphaBackGroudView.addGestureRecognizer(alphaBackGroudViewTapGestureRecognizer)
         
         // 大小常量
-        let btnFontSize = 15                 // 按钮字体大小
-        let paddingLeft = 10.0               // 左边距
-        let selectedImgWidth = 20.0          // 选中图片宽度
-        self.backgroudViewWidth = kScreenWidth * 0.5  // 白色背景层宽度
-        self.backgroudViewHeight = kScreenHeight - kStatusBarHeight - self.PADDING_backgroudView      // 白色背景层高度
-        self.pickviewWidth = backgroudViewWidth
+        let padding = 10.0               // 左边距
+        let width_selectedImg:CGFloat = 20.0          // 选中图片宽度
+        self.width_backgroudView = kScreenWidth * 0.5  // 白色背景层宽度
+        self.height_backgroudView = kScreenHeight - kStatusBarHeight - self.PADDING_backgroudView      // 白色背景层高度
+        self.width_pickview = width_backgroudView
         
-        var backgroudView = UIView.init(frame: CGRect.init(x: self.backgroudViewWidth! - self.PADDING_backgroudView, y: kStatusBarHeight, width: self.backgroudViewWidth, height: self.backgroudViewHeight))
+        // 内容图层显示出来时的x位置
+        let x_contentOri = kScreenWidth - self.width_backgroudView! - width_selectedImg
+        var contentBackgroudView = UIView.init(frame: CGRect.init(x: x_contentOri,
+                                                           y: kStatusBarHeight,
+                                                           width: self.width_backgroudView!,
+                                                           height: self.height_backgroudView!))
+        contentBackgroudView.backgroundColor = .white
+        contentBackgroudView.layer.cornerRadius = 6.0
+        contentBackgroudView.alpha = 1
+        self.addSubview(contentBackgroudView)
         
         
         
@@ -50,13 +66,18 @@ class ScrollSelectPopView:UIView {
         
         
         
-        
-//        return self
     }
+    
+    
     
     public func showInView(parentView:UIView)
     {
         parentView.addSubview(self)
+    }
+    
+    @objc func alphaBackGroudViewTouchUpInside(_ tapGes : UITapGestureRecognizer)
+    {
+        print(#function)
     }
 }
 
