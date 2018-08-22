@@ -70,7 +70,7 @@ class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
         contentPickView.delegate = self
         contentPickView.dataSource = self
         
-        
+        contentBackgroudView.addSubview(contentPickView)
         
         
     }
@@ -113,11 +113,13 @@ class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        let tempLabel = UILabel.init(frame: view!.bounds)
-        tempLabel.text = "Temp"
+        let tempLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: self.width_backgroudView!, height: self.height_backgroudView! / 15))
+        let text = self.dataScrollSelect?.dataArr[row]
+        tempLabel.text = text
+        tempLabel.textAlignment = .center
         view?.addSubview(tempLabel)
         
-        return view!
+        return tempLabel
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
