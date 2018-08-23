@@ -44,14 +44,14 @@ class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
 //        alphaBackGroudView.addGestureRecognizer(alphaBackGroudViewTapGestureRecognizer)
         
         // 大小常量
-        let padding = 10.0               // 左边距
+        let padding:CGFloat = 10.0               // 左边距
         let width_selectedImg:CGFloat = 20.0          // 选中图片宽度
         self.width_backgroudView = kScreenWidth * 0.5  // 白色背景层宽度
         self.height_backgroudView = kScreenHeight - kStatusBarHeight - self.PADDING_backgroudView      // 白色背景层高度
         self.width_pickview = width_backgroudView
         
         // 内容图层显示出来时的x位置
-        let x_contentOri = kScreenWidth - self.width_backgroudView! - width_selectedImg
+        let x_contentOri = kScreenWidth - self.width_backgroudView! - padding
         var contentBackgroudView = UIView.init(frame: CGRect.init(x: x_contentOri,
                                                            y: kStatusBarHeight,
                                                            width: self.width_backgroudView!,
@@ -72,6 +72,11 @@ class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
         
         contentBackgroudView.addSubview(contentPickView)
         
+        // 选中按钮
+        // arrows_right
+        let selectedImg = UIImageView.init(frame: CGRect.init(x: 0, y: ((self.height_backgroudView! - width_selectedImg) / 2), width: width_selectedImg, height: width_selectedImg))
+        selectedImg.image = UIImage.init(named: "arrows_right")
+        contentBackgroudView.addSubview(selectedImg)
         
     }
     
