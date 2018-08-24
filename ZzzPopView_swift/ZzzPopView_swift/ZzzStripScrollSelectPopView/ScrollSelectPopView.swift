@@ -6,12 +6,14 @@
 //  Copyright © 2018 zzz. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 
 class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
 
-
+    weak open var delegate: ScrollSelectPopViewDelegate? // default is nil. weak reference
+    
     let PADDING_backgroudView:CGFloat = 20.0     // 背景层的右、下边距
     
     var dataScrollSelect:DataScrollSelect?
@@ -78,6 +80,8 @@ class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
         selectedImg.image = UIImage.init(named: "arrows_right")
         contentBackgroudView.addSubview(selectedImg)
         
+        
+        
     }
     
     
@@ -130,8 +134,26 @@ class ScrollSelectPopView:UIView, UIPickerViewDelegate,UIPickerViewDataSource  {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(#function)
         
+        // mothed 1
+        delegate?.scrollSelectPopViewSelected!(self, didSelectRow: row, inComponent: component)
         
+        
+        // mothed 2
+//        if delegate != nil
+//        {
+//            if delegate!.responds(to: #selector(delegate!.scrollSelectPopViewSelected(_:didSelectRow:inComponent:)))
+//            {
+//                delegate!.scrollSelectPopViewSelected!(self, didSelectRow: row, inComponent: component)
+//            }
+//        }
         
     }
 }
 
+@objc protocol ScrollSelectPopViewDelegate: NSObjectProtocol {
+
+    @objc optional func scrollSelectPopViewSelected(_ pickerView: ScrollSelectPopView, didSelectRow row: Int, inComponent component: Int)
+    
+    @objc optional func scrollSelectPopViewCancel(_ pickerView: ScrollSelectPopView, didSelectRow row: Int, inComponent component: Int)
+    
+}
